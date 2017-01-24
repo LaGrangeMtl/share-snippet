@@ -1,0 +1,58 @@
+.share-snippet {
+	display: inline-block;
+
+	.share-snippet-item {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		border-radius: 100%;
+		text-align: center;
+		border: 2px solid $white;
+
+		border-color: $color-accent-primary;
+		color: $color-accent-primary;
+
+		cursor:pointer;
+
+		transition: transform 0.6s $easeOutExpo;
+		transform: scale(0);
+		transform: scale(0) translateZ(0);
+
+		&:before {
+			margin:0;
+		}
+
+		@for $i from 1 through 5 {
+			&:nth-child(#{$i}) {
+				transition-delay: 0.05s * ($i);
+			}
+		}
+
+		&:hover {
+			background: $color-accent-primary;
+			color: $white;
+		}
+	}
+
+	.icon-share {
+		transform: scale(1);
+		transform: scale(1) translateZ(0);
+	}
+
+	&:hover {
+		.share-snippet-item {
+			transform: scale(1);
+			transform: scale(1) translateZ(0);
+
+			@for $i from 1 through 5 {
+				&:nth-child(#{$i}) {
+					transition-delay: 0.05s * $i;
+				}
+			}
+		}
+	}
+}
