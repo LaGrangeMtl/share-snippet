@@ -38,6 +38,12 @@
 		}
 	}
 
+	&.square {
+		.share-snippet-item {
+			border-radius: 0;
+		}
+	}
+
 	.icon-share {
 		transform: scale(1);
 		transform: scale(1) translateZ(0);
